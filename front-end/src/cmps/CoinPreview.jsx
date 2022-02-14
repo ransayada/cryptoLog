@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { convertTimestamp } from "../services/utilsService.js";
 
 export function CoinPreview({ coin }) {
   const [open, setOpen] = useState(false);
@@ -13,8 +14,8 @@ export function CoinPreview({ coin }) {
       <button onClick={onCoinInfo}>Info</button>
       {open ? (
         <h6>
-          {"open price: " + coin.openPrice} | {"at: " + coin.openTime} <br/>
-          {"last price: " + coin.lastPrice} | {"at: " + coin.closeTime}
+          {"open price: " + coin.openPrice} <br/> {"at: " + convertTimestamp(coin.openTime)} <br/>
+          {"last price: " + coin.lastPrice} <br/> {"at: " + convertTimestamp(coin.closeTime)}
         </h6>
       ) : (
         <p></p>
