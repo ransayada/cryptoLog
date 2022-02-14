@@ -1,19 +1,24 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  width: 100vw;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .App-logo {
@@ -50,3 +55,43 @@ code {
     transform: rotate(360deg);
   }
 }
+
+.coin-preview-cmp {
+  border: 3px solid black;
+  border-radius: 5px;
+  height: 200px;
+  width: 200px;
+}
+
+
+
+.simple-cards-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 30px;
+}
+
+.coin-preview-cmp.p{
+  font-size: 10px;
+}
+
+
+.one{
+  color: #00BFFF;
+}
+.two{
+  color: #8A2BE2;
+}
+.three{
+  color: #FF69B4;
+}
+.four{
+  color: #FFA500;
+}
+
+
+.button-container{
+  margin-top: 20px;
+}
+
