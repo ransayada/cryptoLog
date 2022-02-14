@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 //components
 import { MyHeader } from "./cmps/MyHeader.jsx";
-// import { MyFooter } from "./cmps/MyFooter.jsx";
+
 
 function App() {
   /**
@@ -45,11 +45,7 @@ function App() {
           </div>
         )}
       </div>
-      {/* <div className="my-footer">
-        <MyFooter />
-      </div> */}
     </div>
   );
 }
-
 export default App;

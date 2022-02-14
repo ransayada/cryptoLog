@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 
-
 export function LoginPage({ coins, Login, sendError }) {
   const [detail, setDetail] = useState({ symbol: "" });
 
@@ -23,7 +22,7 @@ export function LoginPage({ coins, Login, sendError }) {
     <form onSubmit={submitHandler}>
       <div className="form">
         <h2>Login Page</h2>
-        {/*ERORR*/}
+        <h6>please enter coin symbol</h6>
         <div className="input-container">
           <label htmlFor="symbol">Coin Symbol: </label>
           <input
