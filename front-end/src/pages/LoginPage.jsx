@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
+
 export function LoginPage({ coins, Login, sendError }) {
   const [detail, setDetail] = useState({ symbol: "" });
 

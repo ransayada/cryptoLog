@@ -1,4 +1,5 @@
 import { CoinPreview } from "../cmps/CoinPreview.jsx";
+import Button from '@mui/material/Button';
 
 export function HomePage({ Logout, coins }) {
   function onLogout(ev) {
@@ -9,9 +10,9 @@ export function HomePage({ Logout, coins }) {
   return (
     <section className="coins-list-cmp ">
       <h2>Home Page</h2>
-      <button className="myButton" onClick={onLogout}>
+      <Button variant="contained" color="success" onClick={onLogout}>
         Logout
-      </button>
+      </Button>
       <div className="coin-list simple-cards-grid">
         {coins.map((coin) => (
           <CoinPreview key={coin.symbol} coin={coin} />

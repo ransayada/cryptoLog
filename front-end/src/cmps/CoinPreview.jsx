@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { convertTimestamp } from "../services/utilsService.js";
+import Button from "@mui/material/Button";
+// import Card from "@mui/material/Card";
 
 export function CoinPreview({ coin }) {
   const [open, setOpen] = useState(false);
@@ -10,12 +12,15 @@ export function CoinPreview({ coin }) {
   }
   return (
     <div className="coin-preview-cmp">
-      <h1>{ coin.symbol}</h1>
-      <button onClick={onCoinInfo}>Info</button>
+      <Button className="mui-btn" color="secondary" onClick={onCoinInfo}>
+        {coin.symbol}
+      </Button>
       {open ? (
         <h6>
-          {"open price: " + coin.openPrice} <br/> {"at: " + convertTimestamp(coin.openTime)} <br/>
-          {"last price: " + coin.lastPrice} <br/> {"at: " + convertTimestamp(coin.closeTime)}
+          {"open price: " + coin.openPrice} <br />{" "}
+          {"at: " + convertTimestamp(coin.openTime)} <br />
+          {"last price: " + coin.lastPrice} <br />{" "}
+          {"at: " + convertTimestamp(coin.closeTime)}
         </h6>
       ) : (
         <p></p>

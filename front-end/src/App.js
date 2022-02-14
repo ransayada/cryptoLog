@@ -8,20 +8,22 @@ import { MyHeader } from "./cmps/MyHeader.jsx";
 // import { MyFooter } from "./cmps/MyFooter.jsx";
 
 function App() {
+  /**
+   * this is the first time i use SWR hook in my projects
+   * i used it to fetch data from the API
+   */
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: coins, error } = useSWR(
-    "http://localhost:1880/api/coins",
+  const { data: coins } = useSWR(
+    "http://localhost:1880/api/coins", //NODE-RED Endpoint
     fetcher
   );
 
   const [symbol, setSymbol] = useState("");
   const Login = (detail) => {
-    console.log(detail);
     setSymbol(detail.symbol);
   };
   const Logout = () => {
     setSymbol("");
-    console.log("logout");
   };
   const sendError = () => {
     alert(`Invalid Symbol please try another one`);

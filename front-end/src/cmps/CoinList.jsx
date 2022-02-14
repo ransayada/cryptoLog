@@ -9,7 +9,7 @@ import { MyHeader } from "./cmps/MyHeader.jsx";
 
 function App() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: coins, error } = useSWR(
+  const { data: coins } = useSWR(
     "http://localhost:1880/api/coins",
     fetcher
   );

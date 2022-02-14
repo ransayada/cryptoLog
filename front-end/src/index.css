@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   width: 100vw;
+  background-color: #ffe4c4;
 }
 
 code {
@@ -18,7 +19,6 @@ code {
   text-align: center;
   display: flex;
   flex-direction: column;
-  
 }
 
 .App-logo {
@@ -63,8 +63,6 @@ code {
   width: 200px;
 }
 
-
-
 .simple-cards-grid {
   margin-top: 20px;
   display: grid;
@@ -72,26 +70,32 @@ code {
   grid-gap: 30px;
 }
 
-.coin-preview-cmp.p{
+.coin-preview-cmp.p {
   font-size: 10px;
 }
 
+.one {
+  color: #00bfff;
+}
+.two {
+  color: #8a2be2;
+}
+.three {
+  color: #ff69b4;
+}
+.four {
+  color: #ffa500;
+}
 
-.one{
-  color: #00BFFF;
-}
-.two{
-  color: #8A2BE2;
-}
-.three{
-  color: #FF69B4;
-}
-.four{
-  color: #FFA500;
-}
-
-
-.button-container{
+.button-container {
   margin-top: 20px;
 }
 
+
+Card{
+  background-color: #faebd7;
+}
+
+.mui-btn{
+  padding: 20px;
+}
