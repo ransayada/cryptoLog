@@ -1,0 +1,221 @@
+[
+    {
+        "id": "6fced382499de748",
+        "type": "tab",
+        "label": "node-red-server",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8fab4ed8adc72a52",
+        "type": "json",
+        "z": "6fced382499de748",
+        "name": "JSON Parser",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "848a073e42b32de3",
+                "4955dc8ef1fe7231"
+            ]
+        ]
+    },
+    {
+        "id": "d20766502df4c8a6",
+        "type": "http in",
+        "z": "6fced382499de748",
+        "name": "get all coins",
+        "url": "/api/coins",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "f13b5c919b9607ed"
+            ]
+        ]
+    },
+    {
+        "id": "848a073e42b32de3",
+        "type": "http response",
+        "z": "6fced382499de748",
+        "name": "queryRes",
+        "statusCode": "200",
+        "headers": {},
+        "x": 640,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4955dc8ef1fe7231",
+        "type": "debug",
+        "z": "6fced382499de748",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "32582de2e34bd6a8",
+        "type": "inject",
+        "z": "6fced382499de748",
+        "name": "24lap",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "86400",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 60,
+        "wires": [
+            [
+                "276947e12beaadc3"
+            ]
+        ]
+    },
+    {
+        "id": "276947e12beaadc3",
+        "type": "http request",
+        "z": "6fced382499de748",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api2.binance.com/api/v3/ticker/24hr",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "d25674ded6b912fa"
+            ]
+        ]
+    },
+    {
+        "id": "d25674ded6b912fa",
+        "type": "json",
+        "z": "6fced382499de748",
+        "name": "JSON Parser",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 570,
+        "y": 60,
+        "wires": [
+            [
+                "efddec9eb61a9fa8"
+            ]
+        ]
+    },
+    {
+        "id": "efddec9eb61a9fa8",
+        "type": "file",
+        "z": "6fced382499de748",
+        "name": "DB",
+        "filename": "C:\\Users\\ransa\\OneDrive\\Desktop\\fs-ha-monogoto\\coins.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [
+                "358b0de22c506b8f"
+            ]
+        ]
+    },
+    {
+        "id": "f13b5c919b9607ed",
+        "type": "file in",
+        "z": "6fced382499de748",
+        "name": "DB",
+        "filename": "C:\\Users\\ransa\\OneDrive\\Desktop\\fs-ha-monogoto\\coins.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 230,
+        "y": 320,
+        "wires": [
+            [
+                "8fab4ed8adc72a52"
+            ]
+        ]
+    },
+    {
+        "id": "358b0de22c506b8f",
+        "type": "debug",
+        "z": "6fced382499de748",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "28de9d6f00ca6551",
+        "type": "comment",
+        "z": "6fced382499de748",
+        "name": "please make a file called coins.json in path directory",
+        "info": "",
+        "x": 430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "f19ce615952367a2",
+        "type": "comment",
+        "z": "6fced382499de748",
+        "name": "API request",
+        "info": "",
+        "x": 90,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "465d6551dc1fb75d",
+        "type": "comment",
+        "z": "6fced382499de748",
+        "name": "API response",
+        "info": "",
+        "x": 650,
+        "y": 280,
+        "wires": []
+    }
+]
